@@ -6,9 +6,14 @@ import usersRouter from "./users/routes";
 const app = express();
 
 // CORS ДО роутів. Поки що дозволяємо саме адресу нашого фронту.
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.FRONTEND_URL, // продова адреса фронту, задамо на Render пізніше
+].filter(Boolean) as string[];
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // звідки дозволяємо запити
+    origin: allowedOrigins,
   }),
 );
 
