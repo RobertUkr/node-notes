@@ -1,0 +1,19 @@
+# залежності
+node_modules
+**/node_modules
+
+# секрети — НІКОЛИ в git
+.env
+**/.env
+*.env
+!.env.example
+
+# збірка
+dist
+**/dist
+build
+**/build
+
+# логи, системне
+*.log
+.DS_Store
